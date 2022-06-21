@@ -8,7 +8,7 @@ metadata:
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
     external-dns.alpha.kubernetes.io/hostname: {{.Values.spec.ingress.host}}
-    alb.ingress.kubernetes.io/group.name: ci-cd-ingress
+    alb.ingress.kubernetes.io/group.name: team-jose-ingress
 spec:
   ingressClassName: alb
   rules:
