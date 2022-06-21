@@ -5,8 +5,11 @@ metadata:
   namespace: team-jose
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
-    alb.ingress.kubernetes.io/target-type: ip
-spec:
+    alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]',
+    alb.ingress.kubernetes.io/ssl-redirect: '443',
+    external-dns.alpha.kubernetes.io/hostname: wl1.jamoroso.com,
+    alb.ingress.kubernetes.io/group.name: ci-cd-ingress,spec:
+    
   ingressClassName: alb
   rules:
     - http:
@@ -18,3 +21,6 @@ spec:
               name: nginx
               port:
                 number: 80
+  tls:
+    - hosts:
+      - wl1.jamoroso.com
