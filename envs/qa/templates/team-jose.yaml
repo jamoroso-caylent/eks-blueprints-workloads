@@ -9,6 +9,7 @@ spec:
   project: default
   destination:
     namespace: team-jose
+    name: workload-clusters
     server: {{ .Values.spec.destination.server }}
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
