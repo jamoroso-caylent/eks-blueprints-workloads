@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: tasks
-        image: jamorosocaylent/bb-backend-app:0.0.1
+        image: jamorosocaylent/bb-backend-crud-app:0.0.1
         ports:
         - containerPort: 8080
