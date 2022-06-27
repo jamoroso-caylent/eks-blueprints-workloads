@@ -10,7 +10,7 @@ spec:
   destination:
     namespace: team-jose
     name: workload-clusters
-    server: {{ .Values.spec.destination.server }}
+    server: ''
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
