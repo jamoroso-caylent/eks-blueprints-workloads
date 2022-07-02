@@ -13,7 +13,7 @@ spec:
       labels:
         app: backend
     spec:
-      serviceAccountName: team-jose
+      serviceAccountName: team-jose-sa
       containers:
       - name: backend
         image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/simple-crud-backend-app:462cf333f392c3c14e6c197577adbc5e07516be6
