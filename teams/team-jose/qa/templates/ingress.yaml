@@ -7,29 +7,29 @@ metadata:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/listen-ports: '[{"HTTPS":443},{"HTTP":80}]'
     alb.ingress.kubernetes.io/ssl-redirect: '443'
-    external-dns.alpha.kubernetes.io/hostname: {{.Values.spec.ingress.host}}
+    external-dns.alpha.kubernetes.io/hostname: {{.Values.spec.ingress.hostFront}}
     alb.ingress.kubernetes.io/group.name: team-jose-ingress
 spec:
   ingressClassName: alb
   rules:
-    - host: {{.Values.spec.ingress.host}}
-      http:
-        paths:
-        - path: /api
-          pathType: Prefix
-          backend:
-            service:
-              name: tasks
-              port:
-                number: 80
-    - host: {{.Values.spec.ingress.host}}
+    - host: {{.Values.spec.ingress.hostFront}}
       http:
         paths:
         - path: /
           pathType: Prefix
           backend:
             service:
-              name: nginx
+              name: frontend
+              port:
+                number: 80
+    - host: {{.Values.spec.ingress.hostBack}}
+      http:
+        paths:
+        - path: 
+          pathType: Prefix
+          backend:
+            service:
+              name: backend
               port:
                 number: 80
   tls:

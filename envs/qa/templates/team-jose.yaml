@@ -18,7 +18,9 @@ spec:
     helm:
       parameters:
       - name: spec.ingress.host
-        value: {{ .Values.spec.ingress.host }}
+        value: {{ .Values.spec.ingress.hostFront }}
+      - name: spec.ingress.host
+        value: {{ .Values.spec.ingress.hostBack }}
   syncPolicy:
     automated:
       prune: true
