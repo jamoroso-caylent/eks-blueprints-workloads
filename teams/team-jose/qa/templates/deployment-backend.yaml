@@ -39,6 +39,13 @@ spec:
         #     secretKeyRef:
         #       name: backend-backend-secrets
         #       key: backend_secret
+        resources:
+          requests:
+            memory: 1024M
+            cpu: 0.5
+          limits:
+            memory: 2048M
+            cpu: 1
       volumes:
         - name: backend-config
           csi:
