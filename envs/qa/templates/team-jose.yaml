@@ -17,9 +17,9 @@ spec:
     path: teams/team-jose/qa
     helm:
       parameters:
-      - name: spec.ingress.host
+      - name: spec.ingress.hostFront
         value: {{ .Values.spec.ingress.hostFront }}
-      - name: spec.ingress.host
+      - name: spec.ingress.hostBack
         value: {{ .Values.spec.ingress.hostBack }}
   syncPolicy:
     automated:
