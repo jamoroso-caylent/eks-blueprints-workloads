@@ -50,10 +50,10 @@ subjects:
 - kind: ServiceAccount
   name: team-jose
 
----
+# ---
 
-apiVersion: v1
-kind: ServiceAccount
-metadata:
-  name: team-jose
-automountServiceAccountToken: false
+# apiVersion: v1
+# kind: ServiceAccount
+# metadata:
+#   name: team-jose
+# automountServiceAccountToken: false
