@@ -33,13 +33,13 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: team-jose-addons
-  namespace: team-jose
+  namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
-    namespace: argocd
+    namespace: team-jose
     name: workload-clusters
     server: ''
   source:
