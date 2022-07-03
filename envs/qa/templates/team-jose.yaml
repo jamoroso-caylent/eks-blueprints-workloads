@@ -39,9 +39,7 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: team-jose
-    name: workload-clusters
-    server: ''
+    server: https://kubernetes.default.svc
   source:
     repoURL: https://github.com/jamoroso-caylent/eks-blueprints-add-ons
     targetRevision: main
