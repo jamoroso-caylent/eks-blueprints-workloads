@@ -48,12 +48,7 @@ spec:
     path: chart
     helm:
       valueFiles:
-      - values-qa.yaml      
-      parameters:
-      - name: repoUrl
-        value: https://github.com/jamoroso-caylent/eks-blueprints-add-ons
-      - name: targetRevision
-        value: main
+      - values-qa.yaml
   syncPolicy:
     automated:
       prune: true
