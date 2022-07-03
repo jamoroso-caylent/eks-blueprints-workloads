@@ -33,7 +33,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: team-jose-addons
-  namespace: argocd
+  namespace: team-jose
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
