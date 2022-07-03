@@ -27,28 +27,28 @@ spec:
     syncOptions:
     - CreateNamespace=true
 
----
+# ---
 
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: team-jose-addons
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  destination:
-    namespace: team-jose
-    name: workload-clusters
-    server: ''
-  source:
-    repoURL: https://github.com/jamoroso-caylent/eks-blueprints-add-ons
-    targetRevision: main
-    path: chart
-    helm:
-      valueFiles:
-      - values-qa.yaml
-  syncPolicy:
-    automated:
-      prune: true
+# apiVersion: argoproj.io/v1alpha1
+# kind: Application
+# metadata:
+#   name: team-jose-addons
+#   namespace: argocd
+#   finalizers:
+#   - resources-finalizer.argocd.argoproj.io
+# spec:
+#   project: default
+#   destination:
+#     namespace: team-jose
+#     name: workload-clusters
+#     server: ''
+#   source:
+#     repoURL: https://github.com/jamoroso-caylent/eks-blueprints-add-ons
+#     targetRevision: main
+#     path: chart
+#     helm:
+#       valueFiles:
+#       - values-qa.yaml
+#   syncPolicy:
+#     automated:
+#       prune: true
