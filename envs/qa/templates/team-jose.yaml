@@ -1,33 +1,33 @@
-# apiVersion: argoproj.io/v1alpha1
-# kind: Application
-# metadata:
-#   name: team-jose
-#   namespace: argocd
-#   finalizers:
-#   - resources-finalizer.argocd.argoproj.io
-# spec:
-#   project: default
-#   destination:
-#     namespace: team-jose
-#     name: workload-clusters
-#     server: ''
-#   source:
-#     repoURL: {{ .Values.spec.source.repoURL }}
-#     targetRevision: {{ .Values.spec.source.targetRevision }}
-#     path: teams/team-jose/qa
-#     helm:
-#       parameters:
-#       - name: spec.ingress.hostFront
-#         value: {{ .Values.spec.ingress.hostFront }}
-#       - name: spec.ingress.hostBack
-#         value: {{ .Values.spec.ingress.hostBack }}
-#   syncPolicy:
-#     automated:
-#       prune: true
-#     syncOptions:
-#     - CreateNamespace=true
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: team-jose
+  namespace: argocd
+  finalizers:
+  - resources-finalizer.argocd.argoproj.io
+spec:
+  project: default
+  destination:
+    namespace: team-jose
+    name: workload-clusters
+    server: ''
+  source:
+    repoURL: {{ .Values.spec.source.repoURL }}
+    targetRevision: {{ .Values.spec.source.targetRevision }}
+    path: {{ .Values.spec.source.path }}
+    helm:
+      parameters:
+      - name: spec.ingress.hostFront
+        value: {{ .Values.spec.ingress.hostFront }}
+      - name: spec.ingress.hostBack
+        value: {{ .Values.spec.ingress.hostBack }}
+  syncPolicy:
+    automated:
+      prune: true
+    syncOptions:
+    - CreateNamespace=true
 
-# ---
+---
 
 apiVersion: argoproj.io/v1alpha1
 kind: Application
