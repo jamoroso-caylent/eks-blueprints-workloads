@@ -18,3 +18,10 @@ spec:
         image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/simple-crud-frontend-app:latest
         ports:
         - containerPort: 80
+        resources:
+          requests:
+            memory: 1024M
+            cpu: 0.5
+          limits:
+            memory: 2048M
+            cpu: 1
