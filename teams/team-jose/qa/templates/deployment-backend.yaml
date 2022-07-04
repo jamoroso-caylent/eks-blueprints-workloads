@@ -17,7 +17,7 @@ spec:
       containers:
       - name: backend
         image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/simple-crud-backend-app:latest
-        command: [ "/bin/bash", "-c" ]
+        command: [ "/bin/sh", "-c" ]
         args:
           - sleep 10000;
             java -XX:MaxRAMPercentage={{ .Values.maxHeapPercentage }}.0 -cp /app/resources:/app/classes:/app/libs/* {{ .Values.class }}
