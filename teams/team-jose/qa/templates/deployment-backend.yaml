@@ -23,22 +23,22 @@ spec:
         - name: backend-config
           mountPath: "/mnt/backend-config"
           readOnly: true
-        # env:
-        # - name: RDS_DB_HOST
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: backend-backend-secrets
-        #       key: backend_host
-        # - name: RDS_DB_USERNAME
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: backend-backend-secrets
-        #       key: backend_username
-        # - name: RDS_DB_PASSWORD
-        #   valueFrom:
-        #     secretKeyRef:
-        #       name: backend-backend-secrets
-        #       key: backend_secret
+        env:
+        - name: RDS_DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_host
+        - name: RDS_DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_username
+        - name: RDS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_secret
         resources:
           requests:
             memory: 1024M
