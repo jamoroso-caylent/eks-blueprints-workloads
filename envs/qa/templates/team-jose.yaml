@@ -53,7 +53,7 @@ spec:
       - name: region
         value: {{ .Values.region }}
       - name: account
-        value: {{ .Values.account }}
+        value: "{{ .Values.account }}"
       - name: clusterName
         value: {{ .Values.clusterName }}
   syncPolicy:
