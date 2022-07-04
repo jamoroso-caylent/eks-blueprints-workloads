@@ -49,6 +49,13 @@ spec:
     helm:
       valueFiles:
       - values-qa.yaml
+      parameters:
+      - name: region
+        value: {{ .Values.region }}
+      - name: account
+        value: {{ .Values.account }}
+      - name: clusterName
+        value: {{ .Values.clusterName }}
   syncPolicy:
     automated:
       prune: true
