@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: frontend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: frontend
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+      - name: frontend
+        image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-frontend-app-prod:prod-d53325905a01d99182548d3d5c81d79b70f84bd8
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: 1024M
+            cpu: 0.5
+          limits:
+            memory: 2048M
+            cpu: 1

@@ -1,0 +1,55 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: backend
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      serviceAccountName: team-backend
+      containers:
+      - name: backend
+        image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-backend-app-prod:prod-d53325905a01d99182548d3d5c81d79b70f84bd8
+        ports:
+        - containerPort: 8080
+        volumeMounts:
+        - name: backend-config
+          mountPath: "/mnt/backend-config"
+          readOnly: true
+        env:
+        - name: RDS_DB_HOST
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_host
+        - name: RDS_DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_username
+        - name: RDS_DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: backend-backend-secrets
+              key: backend_secret
+        resources:
+          requests:
+            memory: 1024M
+            cpu: 0.5
+          limits:
+            memory: 2048M
+            cpu: 1
+      volumes:
+        - name: backend-config
+          csi:
+            driver: secrets-store.csi.k8s.io
+            readOnly: true
+            volumeAttributes:
+              secretProviderClass: aws-backend-secrets
