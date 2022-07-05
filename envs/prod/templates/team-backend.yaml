@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team-jose
+  name: team-backend
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
-    namespace: team-jose
-    name: workload-clusters
+    namespace: team-backend
+    name: {{ .Values.env }}-workload-cluster
     server: ''
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: teams/team-backend/prod
+    path: teams/team-backend/{{ .Values.env }}
     helm:
       parameters:
       - name: spec.ingress.hostFront
@@ -32,7 +32,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team-jose-addons
+  name: team-backend-addons
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
@@ -48,7 +48,7 @@ spec:
     path: chart
     helm:
       valueFiles:
-      - values-qa.yaml
+      - values-{{ .Values.env }}.yaml
   syncPolicy:
     automated:
       prune: true

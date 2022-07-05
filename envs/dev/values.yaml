@@ -7,3 +7,4 @@ spec:
   ingress:
     hostFront: dev.jamoroso.com
     hostBack: api-dev.jamoroso.com
+env: dev

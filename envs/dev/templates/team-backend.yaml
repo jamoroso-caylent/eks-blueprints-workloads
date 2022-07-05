@@ -9,12 +9,12 @@ spec:
   project: default
   destination:
     namespace: team-backend
-    name: workload-clusters
+    name: {{ .Values.env }}-workload-cluster
     server: ''
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: teams/team-backend/dev
+    path: teams/team-backend/{{ .Values.env }}
     helm:
       parameters:
       - name: spec.ingress.hostFront
@@ -48,7 +48,7 @@ spec:
     path: chart
     helm:
       valueFiles:
-      - values-qa.yaml
+      - values-{{ .Values.env }}.yaml
   syncPolicy:
     automated:
       prune: true
