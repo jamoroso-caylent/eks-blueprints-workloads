@@ -2,7 +2,9 @@ spec:
   destination:
     server: https://kubernetes.default.svc
   source:
-    repoURL: https://github.com/aws-samples/eks-blueprints-workloads
+    repoURL: https://github.com/jamoroso-caylent/eks-blueprints-workloads
     targetRevision: main
+    path: teams/team-backend/prod
   ingress:
-    host: prod.example.com
+    hostFront: jamoroso.com
+    hostBack: api.jamoroso.com

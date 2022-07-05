@@ -14,7 +14,7 @@ spec:
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
     targetRevision: {{ .Values.spec.source.targetRevision }}
-    path: {{ .Values.spec.source.path }}
+    path: teams/team-backend/dev
     helm:
       parameters:
       - name: spec.ingress.hostFront
