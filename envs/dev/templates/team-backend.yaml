@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team-jose
+  name: team-backend
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io
 spec:
   project: default
   destination:
-    namespace: team-jose
+    namespace: team-backend
     name: workload-clusters
     server: ''
   source:
@@ -32,7 +32,7 @@ spec:
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: team-jose-addons
+  name: team-backend-addons
   namespace: argocd
   finalizers:
   - resources-finalizer.argocd.argoproj.io

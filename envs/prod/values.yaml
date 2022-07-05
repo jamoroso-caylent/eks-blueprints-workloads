@@ -4,7 +4,6 @@ spec:
   source:
     repoURL: https://github.com/jamoroso-caylent/eks-blueprints-workloads
     targetRevision: main
-    path: teams/team-backend/prod
   ingress:
     hostFront: jamoroso.com
     hostBack: api.jamoroso.com
