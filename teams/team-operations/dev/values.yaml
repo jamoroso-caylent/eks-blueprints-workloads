@@ -1,4 +1,4 @@
 azs: ["us-east-1a, us-east-1b, us-east-1c"]
-iamInstanceProfileId: workload-workload-dev-managed-ondemand
+iamInstanceProfileId: workload-dev-workload-dev-mang-ng 
 eksVpcName: workload-dev
 eksClusterId: workload-dev
