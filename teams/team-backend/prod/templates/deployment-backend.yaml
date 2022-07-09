@@ -16,7 +16,7 @@ spec:
       serviceAccountName: team-backend
       containers:
       - name: backend
-        image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-backend-app-prod:prod-d53325905a01d99182548d3d5c81d79b70f84bd8
+        image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-backend-app-prod:prod-ead071c31d6ad664a553cd6bd3cf639229f4c067
         ports:
         - containerPort: 8080
         volumeMounts:
