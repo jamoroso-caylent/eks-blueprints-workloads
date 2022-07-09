@@ -1,0 +1,4 @@
+azs: [us-east-1a, us-east-1b, us-east-1c]
+iamInstanceProfileId: workload-workload-prod-managed-ondemand
+eksVpcName: workload-prod-private*
+eksClusterId: workload-prod
