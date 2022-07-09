@@ -24,5 +24,4 @@ spec:
                 number: 80
   tls:
   - hosts:
-    - {{.Values.spec.ingress.hostFront}}
     - {{.Values.spec.ingress.hostBack}}

@@ -22,17 +22,6 @@ spec:
               name: frontend
               port:
                 number: 80
-    # - host: {{.Values.spec.ingress.hostBack}}
-    #   http:
-    #     paths:
-    #     - path: /
-    #       pathType: Prefix
-    #       backend:
-    #         service:
-    #           name: backend
-    #           port:
-    #             number: 80
   tls:
   - hosts:
     - {{.Values.spec.ingress.hostFront}}
-    - {{.Values.spec.ingress.hostBack}}
