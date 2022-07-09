@@ -16,7 +16,7 @@ spec:
   provider:
     instanceProfile: {{ .Values.iamInstanceProfileId }}
     subnetSelector:
-      Name: {{ .Values.eks-vpc-name }}-private*
+      Name: {{ .Values.eksVpcName }}-private*
     securityGroupSelector:
       karpenter.sh/discovery/{{ .Values.eksClusterId }}: {{ .Values.eksClusterId }}
   labels:
