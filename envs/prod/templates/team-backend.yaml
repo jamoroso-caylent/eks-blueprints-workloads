@@ -9,7 +9,7 @@ spec:
   project: default
   destination:
     namespace: team-backend
-    name: {{ .Values.env }}-workload-cluster
+    name: {{ .Values.env }}-workload
     server: ''
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
@@ -21,34 +21,6 @@ spec:
         value: {{ .Values.spec.ingress.hostFront }}
       - name: spec.ingress.hostBack
         value: {{ .Values.spec.ingress.hostBack }}
-  syncPolicy:
-    automated:
-      prune: true
-    syncOptions:
-    - CreateNamespace=true
-
----
-
-apiVersion: argoproj.io/v1alpha1
-kind: Application
-metadata:
-  name: team-backend-addons
-  namespace: argocd
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
-spec:
-  project: default
-  destination:
-    name: in-cluster
-    namespace: argocd
-    server: ''
-  source:
-    repoURL: https://github.com/jamoroso-caylent/eks-blueprints-add-ons
-    targetRevision: main
-    path: chart
-    helm:
-      valueFiles:
-      - values-{{ .Values.env }}.yaml
   syncPolicy:
     automated:
       prune: true
