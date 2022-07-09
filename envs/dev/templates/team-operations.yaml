@@ -35,8 +35,8 @@ metadata:
 spec:
   project: default
   destination:
-    name: in-cluster
-    namespace: argocd
+    namespace: karpenter
+    name: {{ .Values.env }}-workload
     server: ''
   source:
     repoURL: {{ .Values.spec.source.repoURL }}
