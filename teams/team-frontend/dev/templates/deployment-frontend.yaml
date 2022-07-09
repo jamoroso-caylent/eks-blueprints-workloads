@@ -25,10 +25,10 @@ spec:
           limits:
             memory: 2048M
             cpu: 1
-      # nodeSelector:
-      #   type: karpenter
-      #   provisioner: default
-      # tolerations:
-      #   - key: 'default'
-      #     operator: 'Exists'
-      #     effect: 'NoSchedule'
+      nodeSelector:
+        type: karpenter
+        provisioner: default
+      tolerations:
+        - key: 'default'
+          operator: 'Exists'
+          effect: 'NoSchedule'
