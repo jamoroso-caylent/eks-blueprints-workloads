@@ -35,7 +35,6 @@ metadata:
 spec:
   project: default
   destination:
-    namespace: karpenter
     name: {{ .Values.env }}-workload
     server: ''
   source:
