@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-frontend-app-prod:prod-ead071c31d6ad664a553cd6bd3cf639229f4c067
+        image: {{ .Values.deployment.image }}:{{ .Values.deployment.tag}}
         ports:
         - containerPort: 80
         resources:
