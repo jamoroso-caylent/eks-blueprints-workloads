@@ -1,0 +1,4 @@
+awsBackendSecret: prod/team-backend/backend-config
+deployment:
+  image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-backend-app-prod
+  tag: prod-ead071c31d6ad664a553cd6bd3cf639229f4c067
