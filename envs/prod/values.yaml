@@ -5,6 +5,6 @@ spec:
     repoURL: https://github.com/jamoroso-caylent/eks-blueprints-workloads
     targetRevision: main
   ingress:
-    hostFront: jamoroso.com
-    hostBack: api.jamoroso.com
+    hostFront: 
+    hostBack: 
 env: prod

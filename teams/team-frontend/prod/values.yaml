@@ -1,3 +1,3 @@
 deployment:
-  image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-frontend-app-prod
-  tag: v1.0.0
+  image: 
+  tag:

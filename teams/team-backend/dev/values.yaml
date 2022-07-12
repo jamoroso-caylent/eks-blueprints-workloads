@@ -1,4 +1,4 @@
 awsBackendSecret: dev/team-backend/backend-config
 deployment:
-  image: 321852949023.dkr.ecr.us-east-1.amazonaws.com/crud-backend-app-dev
-  tag: v1.0.0
+  image: 
+  tag: 
